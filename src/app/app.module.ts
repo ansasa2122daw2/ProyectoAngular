@@ -4,23 +4,34 @@ import { BrowserModule } from '@angular/platform-browser';
 //importar SidenavModule
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-//Boostrap SideBar acordeón
+//Boostrap SideBar
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+//Checkbox
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+//icon
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header.component';
-import { sidebarComponent } from './SideBar/sidebar.component';
+import { mainComponent } from './Main/main.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, sidebarComponent],
+  declarations: [AppComponent, HeaderComponent, mainComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatSidenavModule,
     NgbModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
