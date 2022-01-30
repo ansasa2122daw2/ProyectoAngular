@@ -37,5 +37,7 @@ h6{
 }
 
 .botonFavorito{
-    
-}
+    position: fixed;
+    margin-left:80%;
+    ;
+  }
