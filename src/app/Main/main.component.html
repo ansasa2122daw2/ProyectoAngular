@@ -20,9 +20,38 @@
     <mat-checkbox id="" class="example-margin">Sony</mat-checkbox><br>
 
   </mat-drawer>
+
   <mat-drawer-content>
-    
-    <div id="juegosTop"><img src="../assets/llamita.png"><h2>TOP JUEGOS LLAMITA</h2><img src="../assets/llamita.png"></div>
+
+    <div id="juegosTopTitulo"><img src="../assets/llamita.png">
+      <h2>TOP JUEGOS</h2><img src="../assets/llamita.png">
+    </div>
+    <div id="juegosTop">
+      <div id="1juegoTop">
+        <img src="../../assets/SC2.jpg">
+        <h4>STARCRAFT 2</h4>
+        <span>
+          <mat-progress-bar mode="determinate" value="100" aria-valuemin="0" aria-valuemax="5"></mat-progress-bar>
+          <h5>10</h5>
+        </span>
+      </div>
+      <div id="2juegoTop">
+        <img src="../../assets/RDR2.jpg">
+        <h4>READ DEAD REDEMPTION 2</h4>
+        <span>
+          <mat-progress-bar mode="determinate" value="98" aria-valuemin="0" aria-valuemax="5"></mat-progress-bar>
+          <h5>9.8</h5>
+        </span>
+      </div>
+      <div id="3juegoTop">
+        <img src="../../assets/MARIOOD.jpg">
+        <h4>SUPER MARIO ODYSSEY</h4>
+        <span>
+          <mat-progress-bar mode="determinate" value="97" aria-valuemin="0" aria-valuemax="5"></mat-progress-bar>
+          <h5>9.7</h5>
+        </span>
+      </div>
+    </div>
 
     <div class="botonFavorito">
       <button mat-icon-button color="warn" aria-label="Example icon button with a heart icon">

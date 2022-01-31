@@ -17,7 +17,7 @@ h6{
   margin-top:10%;
 }
 
-#juegosTop{
+#juegosTopTitulo{
   display: flex;
   justify-content: space-around;
 
@@ -32,12 +32,53 @@ h6{
   border:1px rgb(65, 64, 64) solid;
 }
 
-#juegosTop h2{
+#juegosTopTitulo h2{
   margin-top: 1.4rem;
 }
 
 .botonFavorito{
     position: fixed;
-    margin-left:80%;
-    margin-top: 35%;
+    margin-left: 80%;
+    margin-top: 6%;
   }
+
+  
+/*JUEGOS*/
+
+#juegosTop{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin:auto;
+  margin-top: 5%;
+}
+
+#juegosTop div{
+  width: 20%;
+}
+
+#juegosTop img{
+  width:260px;
+  height: 350px;
+  margin: auto;
+}
+
+#juegosTop h4{
+  margin-top: 4%;
+  text-align: center;
+}
+
+#juegosTop span{
+  display: flex;
+  align-items: baseline;
+}
+
+#juegosTop mat-progress-bar{
+  width: 70%;
+  margin-left: 30px;
+  height: 12px;
+}
+
+#juegosTop h5{
+margin-left: 10px;
+}
