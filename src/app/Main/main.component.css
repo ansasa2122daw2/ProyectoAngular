@@ -1,27 +1,26 @@
 .example-container {
   width: 100%;
-  height: 100%;
+  height: 85.8%;
 }
 
-.example-container-lateral{
+.example-container-lateral {
   width: 15%;
-  padding-left:2%;
-
+  padding-left: 2%;
 }
 
-mat-checkbox{
+mat-checkbox {
   margin-left: 15%;
 }
 
-h6{
-  margin-top:10%;
+h6 {
+  margin-top: 10%;
 }
 
-#juegosTopTitulo{
+#juegosTopTitulo {
   display: flex;
   justify-content: space-around;
 
-  margin-top:3rem;
+  margin-top: 3rem;
   margin-left: 13rem;
 
   width: 70rem;
@@ -29,56 +28,103 @@ h6{
 
   color: white;
   background-color: #757575;
-  border:1px rgb(65, 64, 64) solid;
+  border: 1px rgb(65, 64, 64) solid;
 }
 
-#juegosTopTitulo h2{
+#juegosTopTitulo h2 {
   margin-top: 1.4rem;
 }
 
-.botonFavorito{
-    position: fixed;
-    margin-left: 80%;
-    margin-top: 6%;
-  }
+.botonFavorito {
+  position: fixed;
+  margin-left: 80%;
+  margin-top: 37%;
+}
 
-  
 /*JUEGOS*/
 
-#juegosTop{
+#juegosTop {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin:auto;
+  margin: auto;
   margin-top: 5%;
 }
 
-#juegosTop div{
+#juegosTop div {
   width: 20%;
 }
 
-#juegosTop img{
-  width:260px;
+#juegosTop img {
+  width: 260px;
   height: 350px;
   margin: auto;
 }
 
-#juegosTop h4{
+#juegosTop img:hover {
+  width: 270px;
+  height: 360px;
+  margin: auto;
+}
+
+#juegosTop h4 {
   margin-top: 4%;
   text-align: center;
 }
 
-#juegosTop span{
+#juegosTop span {
   display: flex;
   align-items: baseline;
 }
 
-#juegosTop mat-progress-bar{
+#juegosTop mat-progress-bar {
   width: 70%;
   margin-left: 30px;
   height: 12px;
 }
 
-#juegosTop h5{
-margin-left: 10px;
+#juegosTop h5 {
+  margin-left: 10px;
+}
+
+#juegosMAS {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 6%;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  text-align: center;
+}
+
+#juegosMAS img {
+  width: 260px;
+  height: 350px;
+  margin: auto;
+}
+
+#juegosMAS img:hover {
+  width: 270px;
+  height: 360px;
+  margin: auto;
+}
+
+#juegosMAS h4 {
+  margin-top: 4%;
+}
+
+#juegosMAS span {
+  display: flex;
+  align-items: baseline;
+}
+
+#juegosMAS mat-progress-bar {
+  width: 70%;
+  margin-left: 30px;
+  height: 12px;
+}
+
+#juegosMAS h5 {
+  margin-left: 10px;
 }
