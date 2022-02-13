@@ -38,7 +38,11 @@
 
       <div id="juegosTop" [@images]="juegos.length">
         <div *ngFor="let juegos of arrayTopJuegos">
-          <img [src]="juegos.imagen" />
+          <img
+            routerLink="/juego"
+            routerLinkActive="active"
+            [src]="juegos.imagen"
+          />
           <h4>{{ juegos.titulo }}</h4>
           <span>
             <mat-progress-bar
@@ -57,7 +61,11 @@
       </div>
       <div id="juegosMAS">
         <div *ngFor="let juegos of arrayJuegos">
-          <img [src]="juegos.imagen" />
+          <img
+            routerLink="/juego"
+            routerLinkActive="active"
+            [src]="juegos.imagen"
+          />
           <h4>{{ juegos.titulo }}</h4>
           <span>
             <mat-progress-bar
