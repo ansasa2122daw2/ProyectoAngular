@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-
+import { Router, ActivatedRoute } from '@angular/router';
 import { HostBinding } from '@angular/core';
 import {
   trigger,
@@ -57,10 +57,16 @@ export class mainComponent {
   arrayJuegos: Juego[] = [];
   arrayTopJuegos: Juego[] = [];
 
-  constructor() {
+  irJuego(juego: Juego): void {
+    this.router.navigate(['/juego'], {
+      state: { data: { juegos: juego } },
+    });
+  }
+
+  constructor(private route: ActivatedRoute, private router: Router) {
     this.juegos = '';
     let Sims4: Juego = {
-      titulo: 'SIMS 4',
+      titulo: 'Sims 4',
       rating: 60,
       isTopJuego: false,
       compañia: 'EA',
@@ -69,7 +75,7 @@ export class mainComponent {
       imagen: '../../assets/sims.jpg',
     };
     let RDR2: Juego = {
-      titulo: 'RED DEAD REDEMPTION 2',
+      titulo: 'Red dead redemption 2',
       rating: 94,
       isTopJuego: true,
       compañia: 'Rockstar',
@@ -78,7 +84,7 @@ export class mainComponent {
       imagen: '../../assets/RDR2.jpg',
     };
     let STARC2: Juego = {
-      titulo: 'STARCRAFT 2',
+      titulo: 'Starcraft 2',
       rating: 80,
       isTopJuego: false,
       compañia: 'Blizzard',
@@ -87,7 +93,7 @@ export class mainComponent {
       imagen: '../../assets/SC2.jpg',
     };
     let MARIOOD: Juego = {
-      titulo: 'SUPER MARIO ODYSSEY',
+      titulo: 'Super mario odissey',
       rating: 90,
       isTopJuego: true,
       compañia: 'Nintendo',
@@ -96,7 +102,7 @@ export class mainComponent {
       imagen: '../../assets/MARIOOD.jpg',
     };
     let ACNH: Juego = {
-      titulo: 'ANIMAL CROSSING NEW HORIZONS',
+      titulo: 'Animal crossing new horizons',
       rating: 80,
       isTopJuego: false,
       compañia: 'Nintendo',
@@ -105,7 +111,7 @@ export class mainComponent {
       imagen: '../../assets/ACNH.jpg',
     };
     let ITTTWO: Juego = {
-      titulo: 'IT TAKES TWO',
+      titulo: 'It takes two',
       rating: 89,
       isTopJuego: true,
       compañia: 'EA',
@@ -114,7 +120,7 @@ export class mainComponent {
       imagen: '../../assets/ITTTWO.jpg',
     };
     let OW: Juego = {
-      titulo: 'OVERWATCH',
+      titulo: 'Overwatch',
       rating: 30,
       isTopJuego: false,
       compañia: 'BLIZZARD',
@@ -123,7 +129,7 @@ export class mainComponent {
       imagen: '../../assets/OW.jpg',
     };
     let UNRAVEL: Juego = {
-      titulo: 'UNRAVEL',
+      titulo: 'Unravel',
       rating: 75,
       isTopJuego: false,
       compañia: 'EA',
@@ -132,7 +138,7 @@ export class mainComponent {
       imagen: '../../assets/UNRAVEL.jpg',
     };
     let ZELDA: Juego = {
-      titulo: 'ZELDA BREATH OF THE WILD',
+      titulo: 'Zelda breath of the wild',
       rating: 85,
       isTopJuego: false,
       compañia: 'EA',
@@ -141,7 +147,7 @@ export class mainComponent {
       imagen: '../../assets/zelda.jpg',
     };
     let GTAV: Juego = {
-      titulo: 'GRAND THEFT AUTO 5',
+      titulo: 'Grand theft auto 5',
       rating: 98,
       isTopJuego: true,
       compañia: 'Rockstar Games',
@@ -150,7 +156,7 @@ export class mainComponent {
       imagen: '../../assets/GTA5.jpg',
     };
     let FLIGHTS: Juego = {
-      titulo: 'MICROSOFT FLIGHT SIMULATOR',
+      titulo: 'Microsoft flight simulator',
       rating: 78,
       isTopJuego: false,
       compañia: 'Microsoft, Xbox-One',
@@ -159,7 +165,7 @@ export class mainComponent {
       imagen: '../../assets/FLIGHTS.jpg',
     };
     let TLASTOFUS2: Juego = {
-      titulo: 'THE LAST OF US II',
+      titulo: 'The last of us II',
       rating: 73,
       isTopJuego: false,
       compañia: 'Sony',
@@ -168,7 +174,7 @@ export class mainComponent {
       imagen: '../../assets/TLASTOFUS2.jpg',
     };
     let GHOSTOFT: Juego = {
-      titulo: 'GHOST OF TSUSHIMA',
+      titulo: 'Ghost of tsushima',
       rating: 88,
       isTopJuego: false,
       compañia: 'Sony',
@@ -177,7 +183,7 @@ export class mainComponent {
       imagen: '../../assets/GHOSTOFT.jpg',
     };
     let FORZAHORIZON5: Juego = {
-      titulo: 'FORZA HORIZON 5',
+      titulo: 'Forza horizon 5',
       rating: 90,
       isTopJuego: false,
       compañia: 'Microsoft',
@@ -186,7 +192,7 @@ export class mainComponent {
       imagen: '../../assets/FORZAHORIZON5.jpg',
     };
     let REVILLAGE: Juego = {
-      titulo: 'RESIDENT EVIL: VILLAGE',
+      titulo: 'Resident evil: Village',
       rating: 82,
       isTopJuego: false,
       compañia: 'SONY',
@@ -195,7 +201,7 @@ export class mainComponent {
       imagen: '../../assets/REVILLAGE.jpg',
     };
     let ALIENISOLATION: Juego = {
-      titulo: 'ALIEN ISOLATION',
+      titulo: 'Alien Isolation',
       rating: 79,
       isTopJuego: false,
       compañia: 'Microsoft',

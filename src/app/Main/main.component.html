@@ -1,25 +1,46 @@
 <mat-drawer-container class="example-container">
   <mat-drawer class="example-container-lateral" mode="side" opened>
     <h6>Plataformas</h6>
-    <mat-checkbox id="" class="example-margin">Nintendo Switch</mat-checkbox
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >Nintendo Switch</mat-checkbox
     ><br />
-    <mat-checkbox id="" class="example-margin">PC</mat-checkbox><br />
-    <mat-checkbox id="" class="example-margin">PS5</mat-checkbox><br />
-    <mat-checkbox id="" class="example-margin">X-Box One</mat-checkbox>
+    <mat-checkbox color="primary" id="" class="example-margin">PC</mat-checkbox
+    ><br />
+    <mat-checkbox color="primary" id="" class="example-margin">PS5</mat-checkbox
+    ><br />
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >X-Box One</mat-checkbox
+    >
 
     <h6>Género</h6>
-    <mat-checkbox id="" class="example-margin">Aventura</mat-checkbox><br />
-    <mat-checkbox id="" class="example-margin">Estrategia</mat-checkbox><br />
-    <mat-checkbox id="" class="example-margin">Simulación</mat-checkbox><br />
-    <mat-checkbox id="" class="example-margin">Terror</mat-checkbox><br />
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >Aventura</mat-checkbox
+    ><br />
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >Estrategia</mat-checkbox
+    ><br />
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >Simulación</mat-checkbox
+    ><br />
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >Terror</mat-checkbox
+    ><br />
 
     <h6>Compañia</h6>
-    <mat-checkbox id="" class="example-margin">Blizzard</mat-checkbox><br />
-    <mat-checkbox id="" class="example-margin">EA</mat-checkbox><br />
-    <mat-checkbox id="" class="example-margin">Microsoft</mat-checkbox><br />
-    <mat-checkbox id="" class="example-margin">Rockstar Games</mat-checkbox
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >Blizzard</mat-checkbox
     ><br />
-    <mat-checkbox id="" class="example-margin">Sony</mat-checkbox><br />
+    <mat-checkbox color="primary" id="" class="example-margin">EA</mat-checkbox
+    ><br />
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >Microsoft</mat-checkbox
+    ><br />
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >Rockstar Games</mat-checkbox
+    ><br />
+    <mat-checkbox color="primary" id="" class="example-margin"
+      >Sony</mat-checkbox
+    ><br />
   </mat-drawer>
 
   <mat-drawer-content>
@@ -39,11 +60,13 @@
       <div id="juegosTop" [@images]="juegos.length">
         <div *ngFor="let juegos of arrayTopJuegos">
           <img
+            (click)="irJuego(juegos)"
             routerLink="/juego"
             routerLinkActive="active"
             [src]="juegos.imagen"
           />
-          <h4>{{ juegos.titulo }}</h4>
+          <h4>{{ juegos.titulo | upperCapital }}</h4>
+
           <span>
             <mat-progress-bar
               mode="determinate"
@@ -53,6 +76,7 @@
             ></mat-progress-bar>
             <h5>{{ juegos.rating }}</h5>
           </span>
+          <div id="like"><img src="../assets/corasao.png" /></div>
         </div>
       </div>
 
@@ -62,11 +86,12 @@
       <div id="juegosMAS">
         <div *ngFor="let juegos of arrayJuegos">
           <img
+            (click)="irJuego(juegos)"
             routerLink="/juego"
             routerLinkActive="active"
             [src]="juegos.imagen"
           />
-          <h4>{{ juegos.titulo }}</h4>
+          <h4>{{ juegos.titulo | upperCapital }}</h4>
           <span>
             <mat-progress-bar
               mode="determinate"
@@ -74,6 +99,7 @@
             ></mat-progress-bar>
             <h5>{{ juegos.rating }}</h5>
           </span>
+          <div id="like"><img id="likeimg" src="../assets/corasao.png" /></div>
         </div>
       </div>
     </div>

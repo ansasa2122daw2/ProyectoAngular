@@ -1,130 +1,14 @@
-.example-container {
-  width: 100%;
-  height: 85.8%;
-}
-
-.example-container-lateral {
-  width: 15%;
-  padding-left: 2%;
-}
-
-mat-checkbox {
-  margin-left: 15%;
-}
-
-h6 {
-  margin-top: 10%;
-}
-
-#juegosTopTitulo {
-  display: flex;
-  justify-content: space-around;
-
-  margin-top: 3rem;
-  margin-left: 13rem;
-
-  width: 70rem;
-  height: 5rem;
-
-  color: white;
-  background-color: #757575;
-  border: 1px rgb(65, 64, 64) solid;
-}
-
-#juegosTopTitulo h2 {
-  margin-top: 1.4rem;
-}
-
-.botonFavorito {
-  position: fixed;
-  margin-left: 80%;
-  margin-top: 37%;
-}
-
-/*JUEGOS*/
-
-#juegosTop {
-  display: flex;
-  justify-content: space-between;
-  width: 80%;
-  margin: auto;
-  margin-top: 5%;
-}
-
-#juegosTop div {
+img {
   width: 20%;
+  height: 20%;
 }
 
-#juegosTop img {
-  width: 260px;
-  height: 350px;
-  margin: auto;
+#juego {
+  margin-left: 6%;
 }
 
-#juegosTop img:hover {
-  width: 270px;
-  height: 360px;
-  margin: auto;
-}
-
-#juegosTop h4 {
-  margin-top: 4%;
-  text-align: center;
-}
-
-#juegosTop span {
-  display: flex;
-  align-items: baseline;
-}
-
-#juegosTop mat-progress-bar {
-  width: 70%;
-  margin-left: 30px;
-  height: 12px;
-}
-
-#juegosTop h5 {
-  margin-left: 10px;
-}
-
-#juegosMAS {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 6%;
-  justify-content: space-between;
-  width: 80%;
-  margin: auto;
-  margin-top: 5%;
-  text-align: center;
-}
-
-#juegosMAS img {
-  width: 260px;
-  height: 350px;
-  margin: auto;
-}
-
-#juegosMAS img:hover {
-  width: 270px;
-  height: 360px;
-  margin: auto;
-}
-
-#juegosMAS h4 {
-  margin-top: 4%;
-}
-
-#juegosMAS span {
-  display: flex;
-  align-items: baseline;
-}
-
-#juegosMAS mat-progress-bar {
-  width: 70%;
-  margin-left: 30px;
-  height: 12px;
-}
-
-#juegosMAS h5 {
-  margin-left: 10px;
+h1 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-weight: bold;
 }

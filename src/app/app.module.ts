@@ -17,16 +17,27 @@ import { MatButtonModule } from '@angular/material/button';
 //valoracion
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
+//pipe
+import { Pipe, PipeTransform } from '@angular/core';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header.component';
 import { mainComponent } from './Main/main.component';
 import { juegoComponent } from './zJuego/juego.component';
+
+import { UpperCapitalPipe } from './pipe.personalizada';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MainRoutingModule } from './main.routing.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, mainComponent, juegoComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    mainComponent,
+    juegoComponent,
+    UpperCapitalPipe,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
