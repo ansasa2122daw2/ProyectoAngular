@@ -2,6 +2,7 @@ img {
   margin-top: 2rem;
   height: 4rem;
   margin-left: 5%;
+  cursor: pointer;
 }
 
 div {
@@ -10,12 +11,12 @@ div {
   background-color: grey;
 }
 
-input{
-  margin-left:35%;
+input {
+  margin-left: 35%;
 
   width: 400px;
   height: 40px;
 
-  border:none;
-  border-radius:20px;
+  border: none;
+  border-radius: 20px;
 }

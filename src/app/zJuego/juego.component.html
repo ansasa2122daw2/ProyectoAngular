@@ -1,10 +1,19 @@
 <div id="juego">
-  <h1>{{ rebut | upperCapital }}</h1>
-  <img src="{{ img }}" />
-  <h5>{{ compania }}</h5>
-  <h5>{{ plataforma }}</h5>
-  <h5>{{ genero }}</h5>
-  <div id="description">
-    <h4>Descripción</h4>
+  <div id="titulo">
+    <h1>{{ rebut | upperCapital }}</h1>
+    <img src="{{ img }}" />
+  </div>
+  <div id="contenidoJuego">
+    <h5>Compañía: {{ compania }}</h5>
+    <h5>Plataforma: {{ plataforma }}</h5>
+    <h5>Género: {{ genero }}</h5>
+    <h4>Descripción:</h4>
+    <p>
+      {{ descripcion }}
+    </p>
+  </div>
+  <div id="">
+    <h3>Tráiler</h3>
+    <video></video>
   </div>
 </div>
