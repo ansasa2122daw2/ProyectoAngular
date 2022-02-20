@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HostBinding } from '@angular/core';
+
 import {
   trigger,
   state,
@@ -56,6 +57,7 @@ import { CompilerOptionsValue } from 'typescript';
 })
 export class mainComponent {
   @Input() juegos: String;
+  busquedaPost = '';
 
   arrayJuegos: Juego[] = [];
   arrayTopJuegos: Juego[] = [];
@@ -66,11 +68,11 @@ export class mainComponent {
     });
   }
 
-  onFav(juego: Juego): void {
-    this.router.navigate(['/favoritos'], {
-      state: { data: { juegos: juego } },
-    });
-  }
+  // onFav(juego: Juego): void {
+  //   this.router.navigate(['/favoritos'], {
+  //     state: { data: { juegos: juego } },
+  //   });
+  // }
 
   arrayOnSave: Juego[] = [];
   onSave(juego: Juego) {
@@ -78,7 +80,9 @@ export class mainComponent {
     // localStorage.setItem('juegoTitulo', juego.titulo);
     // localStorage.setItem('juegoRating', JSON.stringify(juego.rating));
     this.arrayOnSave.push(juego);
-    localStorage.setItem('titulo', juego.titulo);
+    //localStorage.setItem('titulo', juego.titulo);
+    localStorage.setItem('juegos', JSON.stringify(this.arrayOnSave));
+
     console.log(this.arrayOnSave);
   }
 

@@ -8,28 +8,31 @@ import { mainComponent } from '../Main/main.component';
   animations: [],
 })
 export class favComponent {
-  titulo: string;
+  arrayJuegos: any[] = [];
+  juego: any;
+  storage = localStorage.getItem('juegoTitulo');
+  imagen = localStorage.getItem('juegos.imagen');
+  rating = localStorage.getItem('juegoRating');
+  juegoTitulo = localStorage.getItem('juegos.titulo');
+  //juegoTitulo = JSON.parse(localStorage.getItem('juegos'));
 
-  // arrayJuegos: [] = [];
-  // // storage = localStorage.getItem('juegoTitulo');
-  // imagen = localStorage.getItem('juegoImg');
-  // rating = localStorage.getItem('juegoRating');
-  // juegoTitulo = localStorage.getItem('titulo');
-
-  // onClear() {
-  //   localStorage.removeItem('juegoTitulo');
-  //   localStorage.removeItem('juegoImg');
-  //   localStorage.removeItem('juegoRating');
-  //   localStorage.removeItem('titulo');
-  // }
+  onClear() {
+    localStorage.removeItem('juegoTitulo');
+    localStorage.removeItem('juegoImg');
+    localStorage.removeItem('juegoRating');
+    localStorage.removeItem('titulo');
+  }
   constructor() {
-    this.titulo = history.state.data.juegos.titulo;
+    this.juegoTitulo = '';
+    this.juego = '';
   }
 
   ngOnInit() {
-    //   for (let i = 0; i < localStorage['lenght']; i++) {
-    //     localStorage.key(i);
-    //     this.arrayJuegos.push(localStorage.getItem(localStorage.key(i)));
-    //   }
+    for (let i = 0; i < localStorage.length; i++) {
+      this.juego = { titulo: this.juegoTitulo };
+      this.arrayJuegos.push(this.juego);
+    }
+    console.log(this.juego);
+    console.log(this.arrayJuegos);
   }
 }

@@ -23,6 +23,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 //Badge
 import { MatBadgeModule } from '@angular/material/badge';
 
+import { FormsModule } from '@angular/forms';
+
 //Menu expansion
 import { MatExpansionModule } from '@angular/material/expansion';
 
@@ -32,7 +34,8 @@ import { mainComponent } from './Main/main.component';
 import { juegoComponent } from './zJuego/juego.component';
 import { favComponent } from './zzFav/fav.component';
 
-import { UpperCapitalPipe } from './pipe.personalizada';
+import { BusquedaPipe } from './Pipes/busqueda';
+import { UpperCapitalPipe } from './Pipes/pipe.personalizada';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MainRoutingModule } from './main.routing.module';
@@ -45,6 +48,7 @@ import { MainRoutingModule } from './main.routing.module';
     juegoComponent,
     UpperCapitalPipe,
     favComponent,
+    BusquedaPipe,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ import { MainRoutingModule } from './main.routing.module';
     MainRoutingModule,
     MatBadgeModule,
     MatExpansionModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -57,6 +57,13 @@
         >
       </button>
     </div>
+    <input
+      style="position: fixed"
+      id="busquedaPost"
+      name="busquedaPost"
+      placeholder="Busca tu título aquí"
+      [(ngModel)]="busquedaPost"
+    />
 
     <div id="jueguitos_titulo">
       <div id="juegosTopTitulo">
@@ -85,20 +92,17 @@
             <h5>{{ juegos.rating }}</h5>
           </span>
           <div id="like">
-            <img
-              (click)="onSave(juegos)"
-              (click)="onFav(juegos)"
-              src="../assets/corasao.png"
-            />
+            <img (click)="onSave(juegos)" src="../assets/corasao.png" />
           </div>
         </div>
+        <!-- (click)="onFav(juegos)" -->
       </div>
 
       <div id="juegosTopTitulo">
         <h2>MÁS JUEGOS</h2>
       </div>
       <div id="juegosMAS">
-        <div *ngFor="let juegos of arrayJuegos">
+        <div *ngFor="let juegos of arrayJuegos | busqueda: busquedaPost">
           <img
             (click)="irJuego(juegos)"
             routerLink="/juego"
