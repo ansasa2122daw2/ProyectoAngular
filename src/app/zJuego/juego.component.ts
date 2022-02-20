@@ -27,6 +27,7 @@ export class juegoComponent {
   plataforma: string;
   genero: string;
   descripcion: string;
+  trailer: string;
 
   constructor() {
     this.rebut = history.state.data.juegos.titulo;
@@ -35,6 +36,8 @@ export class juegoComponent {
     this.plataforma = history.state.data.juegos.plataforma;
     this.genero = history.state.data.juegos.genero;
     this.descripcion = history.state.data.juegos.descripcion;
+    this.trailer = history.state.data.juegos.video;
+    console.log(this.trailer);
   }
   ngOnInit(): void {}
 }

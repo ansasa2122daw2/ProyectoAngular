@@ -7,13 +7,19 @@
     <h5>Compañía: {{ compania }}</h5>
     <h5>Plataforma: {{ plataforma }}</h5>
     <h5>Género: {{ genero }}</h5>
+    <hr size="5px" color="black" width="75%" />
     <h4>Descripción:</h4>
     <p>
       {{ descripcion }}
     </p>
   </div>
-  <div id="">
+
+  <div id="abajo">
     <h3>Tráiler</h3>
-    <video></video>
+    <div layout="column" flex>
+      <video layout-fill preload="" controls>
+        <source src="{{ trailer }}" type="video/mp4" />
+      </video>
+    </div>
   </div>
 </div>

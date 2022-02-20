@@ -1,0 +1,29 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Favoritos</li>
+  </ol>
+</nav>
+<div id="todo">
+  <h1><img src="../../assets/corasao.png" />FAVORITOS</h1>
+  <div id="boton">
+    <button (click)="onClear()" mat-flat-button color="primary">
+      Clear all
+    </button>
+  </div>
+  <div *ngFor="let array of arrayOnSave" class="card" style="width: 18rem">
+    <img src="{{ imagen }}" class="img" />
+    <div class="card-body">
+      <h5 class="card-title">{{ juegoTitulo | uppercase }}</h5>
+      <!--pipe creada del angular material (upperCapital creada por nosotros en pipe personalizada)-->
+      <p class="card-text">
+        <mat-progress-bar
+          mode="determinate"
+          [value]="rating"
+          aria-valuemin="0"
+          aria-valuemax="5"
+        ></mat-progress-bar>
+      </p>
+    </div>
+  </div>
+</div>

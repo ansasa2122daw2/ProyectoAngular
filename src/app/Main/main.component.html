@@ -48,7 +48,13 @@
   <mat-drawer-content>
     <div class="botonFavorito">
       <button mat-icon-button color="warn" aria-label="">
-        <mat-icon>favorite</mat-icon>
+        <mat-icon
+          routerLink="/favoritos"
+          routerLinkActive="active"
+          matBadge=""
+          matBadgeColor="warn"
+          >favorite</mat-icon
+        >
       </button>
     </div>
 
@@ -78,7 +84,9 @@
             ></mat-progress-bar>
             <h5>{{ juegos.rating }}</h5>
           </span>
-          <div id="like"><img src="../assets/corasao.png" /></div>
+          <div id="like">
+            <img (click)="onSave(juegos)" src="../assets/corasao.png" />
+          </div>
         </div>
       </div>
 
@@ -101,7 +109,13 @@
             ></mat-progress-bar>
             <h5>{{ juegos.rating }}</h5>
           </span>
-          <div id="like"><img id="likeimg" src="../assets/corasao.png" /></div>
+          <div id="like">
+            <img
+              (click)="onSave(juegos)"
+              id="likeimg"
+              src="../assets/corasao.png"
+            />
+          </div>
         </div>
       </div>
     </div>

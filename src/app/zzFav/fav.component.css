@@ -1,0 +1,15 @@
+#todo {
+  padding-left: 5%;
+}
+#todo img {
+  width: 60px;
+  height: 33px;
+}
+#juego {
+  padding: 30px;
+}
+
+#todo .img {
+  width: 100%;
+  height: 100%;
+}

@@ -45,3 +45,29 @@ h1 {
   height: 400px;
   grid-area: area3, area4;
 }
+
+#trailer {
+  display: block;
+  width: 200%;
+  height: 100%;
+  margin: auto;
+}
+
+#abajo {
+  position: absolute;
+  padding-left: 10.5%;
+  padding-top: 42%;
+}
+
+video {
+  width: 200%;
+  height: 200%;
+  margin-top: -10px;
+}
+
+h3 {
+  width: 390px;
+  border: 5px solid black;
+  background-color: black;
+  color: white;
+}

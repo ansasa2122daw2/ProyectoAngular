@@ -20,10 +20,14 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 //pipe
 import { Pipe, PipeTransform } from '@angular/core';
 
+//Badge
+import { MatBadgeModule } from '@angular/material/badge';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header.component';
 import { mainComponent } from './Main/main.component';
 import { juegoComponent } from './zJuego/juego.component';
+import { favComponent } from './zzFav/fav.component';
 
 import { UpperCapitalPipe } from './pipe.personalizada';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,6 +41,7 @@ import { MainRoutingModule } from './main.routing.module';
     mainComponent,
     juegoComponent,
     UpperCapitalPipe,
+    favComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +53,7 @@ import { MainRoutingModule } from './main.routing.module';
     MatButtonModule,
     MatProgressBarModule,
     MainRoutingModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

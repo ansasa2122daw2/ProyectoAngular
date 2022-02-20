@@ -4,10 +4,12 @@ import { mainComponent } from './Main/main.component';
 import { PageNotFound } from './zzPagenotFound/error.component';
 
 import { juegoComponent } from './zJuego/juego.component';
+import { favComponent } from './zzFav/fav.component';
 
 const routing: Routes = [
   { path: '', component: mainComponent },
   { path: 'juego', component: juegoComponent },
+  { path: 'favoritos', component: favComponent },
   { path: '**', component: PageNotFound },
 ];
 
