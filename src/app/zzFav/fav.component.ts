@@ -8,18 +8,28 @@ import { mainComponent } from '../Main/main.component';
   animations: [],
 })
 export class favComponent {
-  // storage = localStorage.getItem('juegoTitulo');
-  imagen = localStorage.getItem('juegoImg');
-  rating = localStorage.getItem('juegoRating');
-  juegoTitulo = localStorage.getItem('titulo');
-  //this.arrayShow.push(juegoTitulo);
+  titulo: string;
 
-  onClear() {
-    localStorage.removeItem('juegoTitulo');
-    localStorage.removeItem('juegoImg');
-    localStorage.removeItem('juegoRating');
+  // arrayJuegos: [] = [];
+  // // storage = localStorage.getItem('juegoTitulo');
+  // imagen = localStorage.getItem('juegoImg');
+  // rating = localStorage.getItem('juegoRating');
+  // juegoTitulo = localStorage.getItem('titulo');
+
+  // onClear() {
+  //   localStorage.removeItem('juegoTitulo');
+  //   localStorage.removeItem('juegoImg');
+  //   localStorage.removeItem('juegoRating');
+  //   localStorage.removeItem('titulo');
+  // }
+  constructor() {
+    this.titulo = history.state.data.juegos.titulo;
   }
-  constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    //   for (let i = 0; i < localStorage['lenght']; i++) {
+    //     localStorage.key(i);
+    //     this.arrayJuegos.push(localStorage.getItem(localStorage.key(i)));
+    //   }
+  }
 }

@@ -85,7 +85,11 @@
             <h5>{{ juegos.rating }}</h5>
           </span>
           <div id="like">
-            <img (click)="onSave(juegos)" src="../assets/corasao.png" />
+            <img
+              (click)="onSave(juegos)"
+              (click)="onFav(juegos)"
+              src="../assets/corasao.png"
+            />
           </div>
         </div>
       </div>

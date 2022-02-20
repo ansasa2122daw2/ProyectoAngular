@@ -23,6 +23,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 //Badge
 import { MatBadgeModule } from '@angular/material/badge';
 
+//Menu expansion
+import { MatExpansionModule } from '@angular/material/expansion';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header.component';
 import { mainComponent } from './Main/main.component';
@@ -54,6 +57,7 @@ import { MainRoutingModule } from './main.routing.module';
     MatProgressBarModule,
     MainRoutingModule,
     MatBadgeModule,
+    MatExpansionModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

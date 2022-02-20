@@ -66,6 +66,12 @@ export class mainComponent {
     });
   }
 
+  onFav(juego: Juego): void {
+    this.router.navigate(['/favoritos'], {
+      state: { data: { juegos: juego } },
+    });
+  }
+
   arrayOnSave: Juego[] = [];
   onSave(juego: Juego) {
     // localStorage.setItem('juegoImg', juego.imagen);
