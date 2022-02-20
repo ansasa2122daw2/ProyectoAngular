@@ -8,7 +8,6 @@ import { mainComponent } from '../Main/main.component';
   animations: [],
 })
 export class favComponent {
-  arrayShow: [] = [];
   // storage = localStorage.getItem('juegoTitulo');
   imagen = localStorage.getItem('juegoImg');
   rating = localStorage.getItem('juegoRating');
