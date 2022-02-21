@@ -18,7 +18,12 @@ import { mainComponent } from '../Main/main.component';
   selector: 'app-juego',
   templateUrl: './juego.component.html',
   styleUrls: ['./juego.component.css'],
-  animations: [],
+  animations: [
+    trigger('enterState', [
+      state('void', style({ opacity: 0 })),
+      transition('void => *', animate(2000)),
+    ]),
+  ],
 })
 export class juegoComponent {
   rebut: string;

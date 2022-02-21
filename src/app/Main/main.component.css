@@ -12,6 +12,17 @@ mat-checkbox {
   margin-left: 15%;
 }
 
+#busquedaPost {
+  position: absolute;
+  margin-top: -4.5%;
+  margin-left: 26%;
+  height: 5%;
+
+  width: 28%;
+  border-radius: 25px;
+  padding-left: 10px;
+}
+
 h6 {
   margin-top: 10%;
 }
@@ -20,10 +31,10 @@ h6 {
   display: flex;
   justify-content: space-around;
 
-  margin-top: 3rem;
-  margin-left: 13rem;
+  margin-top: 3%;
+  margin-left: 13%;
 
-  width: 70rem;
+  width: 70%;
   height: 5rem;
 
   color: white;
@@ -45,6 +56,7 @@ h6 {
 
 #juegosTop {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 80%;
   margin: auto;
@@ -97,11 +109,12 @@ h6 {
   margin-top: 5%;
   text-align: center;
   height: 100%;
+  padding-bottom: 13rem;
 }
 
 #juegosMAS img {
   width: 260px;
-  height: 350px;
+  height: 345px;
   margin: auto;
 }
 

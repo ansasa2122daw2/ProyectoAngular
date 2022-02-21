@@ -33,6 +33,7 @@ import { HeaderComponent } from './Header/header.component';
 import { mainComponent } from './Main/main.component';
 import { juegoComponent } from './zJuego/juego.component';
 import { favComponent } from './zzFav/fav.component';
+import { ContactoComponent } from './Contacto/contacto.component';
 
 import { BusquedaPipe } from './Pipes/busqueda';
 import { UpperCapitalPipe } from './Pipes/pipe.personalizada';
@@ -49,6 +50,7 @@ import { MainRoutingModule } from './main.routing.module';
     UpperCapitalPipe,
     favComponent,
     BusquedaPipe,
+    ContactoComponent,
   ],
   imports: [
     BrowserModule,

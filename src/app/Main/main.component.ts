@@ -68,25 +68,16 @@ export class mainComponent {
     });
   }
 
-  // onFav(juego: Juego): void {
-  //   this.router.navigate(['/favoritos'], {
-  //     state: { data: { juegos: juego } },
-  //   });
-  // }
-
   arrayOnSave: Juego[] = [];
   onSave(juego: Juego) {
-    // localStorage.setItem('juegoImg', juego.imagen);
-    // localStorage.setItem('juegoTitulo', juego.titulo);
-    // localStorage.setItem('juegoRating', JSON.stringify(juego.rating));
     this.arrayOnSave.push(juego);
-    //localStorage.setItem('titulo', juego.titulo);
     localStorage.setItem('juegos', JSON.stringify(this.arrayOnSave));
 
     console.log(this.arrayOnSave);
   }
 
   constructor(private route: ActivatedRoute, private router: Router) {
+    this.suma = 0;
     this.juegos = '';
     let Sims4: Juego = {
       titulo: 'Sims 4',
@@ -299,7 +290,17 @@ export class mainComponent {
     this.arrayJuegos.push(OW);
   }
 
-  ngOnInit(): void {}
+  suma: number;
+  ngOnInit(): void {
+    const localS = localStorage.getItem('juegos');
+    if (localS) {
+      for (const juego of localS) {
+        if (juego) {
+          this.suma++;
+        }
+      }
+    }
+  }
 
   // this.arrayJuegos.find(PC);Se hará un filter para el checkbox y los juegos
 }

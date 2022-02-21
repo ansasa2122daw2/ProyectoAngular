@@ -51,8 +51,9 @@
         <mat-icon
           routerLink="/favoritos"
           routerLinkActive="active"
-          matBadge=""
+          matBadge="{{ suma }}"
           matBadgeColor="warn"
+          style="font-size: 40px"
           >favorite</mat-icon
         >
       </button>
@@ -101,7 +102,7 @@
       <div id="juegosTopTitulo">
         <h2>MÁS JUEGOS</h2>
       </div>
-      <div id="juegosMAS">
+      <div id="juegosMAS" [@images]="juegos.length">
         <div *ngFor="let juegos of arrayJuegos | busqueda: busquedaPost">
           <img
             (click)="irJuego(juegos)"

@@ -1,38 +1,69 @@
 import { Component, Input } from '@angular/core';
 import { mainComponent } from '../Main/main.component';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  stagger,
+  query,
+  keyframes,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-fav',
   templateUrl: './fav.component.html',
   styleUrls: ['./fav.component.css'],
-  animations: [],
+  animations: [
+    trigger('enterState', [
+      transition('* => open', [animate('1s', style({ opacity: '*' }))]),
+    ]),
+  ],
 })
 export class favComponent {
-  arrayJuegos: any[] = [];
-  juego: any;
-  storage = localStorage.getItem('juegoTitulo');
-  imagen = localStorage.getItem('juegos.imagen');
-  rating = localStorage.getItem('juegoRating');
-  juegoTitulo = localStorage.getItem('juegos.titulo');
-  //juegoTitulo = JSON.parse(localStorage.getItem('juegos'));
+  arrayLista: any[] = [];
+  arrayJuegos = localStorage.getItem('juegos');
+
+  if(arrayJuegos: string) {
+    this.arrayLista = JSON.parse(arrayJuegos);
+  }
 
   onClear() {
-    localStorage.removeItem('juegoTitulo');
-    localStorage.removeItem('juegoImg');
-    localStorage.removeItem('juegoRating');
-    localStorage.removeItem('titulo');
-  }
-  constructor() {
-    this.juegoTitulo = '';
-    this.juego = '';
+    localStorage.removeItem('juegos');
+    this.arrayLista.splice(0, 99999);
+    this.conseguirFavs();
   }
 
-  ngOnInit() {
-    for (let i = 0; i < localStorage.length; i++) {
-      this.juego = { titulo: this.juegoTitulo };
-      this.arrayJuegos.push(this.juego);
-    }
-    console.log(this.juego);
-    console.log(this.arrayJuegos);
+  irJuego(juego: Juego): void {
+    this.router.navigate(['/juego'], {
+      state: { data: { juegos: juego } },
+    });
   }
+  constructor(private route: ActivatedRoute, private router: Router) {}
+
+  ngOnInit() {
+    this.conseguirFavs();
+  }
+
+  conseguirFavs() {
+    const favs = localStorage.getItem('juegos');
+    if (favs) {
+      this.arrayLista = JSON.parse(favs);
+    }
+  }
+}
+
+export interface Juego {
+  titulo: string;
+  rating: number;
+  isTopJuego: boolean;
+  compañia: string;
+  plataforma: string;
+  genero: string;
+  imagen: string;
+  video: string;
+  descripcion: string;
 }
