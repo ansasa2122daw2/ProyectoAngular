@@ -61,6 +61,7 @@ export class mainComponent {
 
   arrayJuegos: Juego[] = [];
   arrayTopJuegos: Juego[] = [];
+  arrayOnSave: Juego[] = [];
 
   irJuego(juego: Juego): void {
     this.router.navigate(['/juego'], {
@@ -68,7 +69,6 @@ export class mainComponent {
     });
   }
 
-  arrayOnSave: Juego[] = [];
   onSave(juego: Juego) {
     this.arrayOnSave.push(juego);
     localStorage.setItem('juegos', JSON.stringify(this.arrayOnSave));
@@ -77,7 +77,7 @@ export class mainComponent {
   }
 
   constructor(private route: ActivatedRoute, private router: Router) {
-    this.suma = 0;
+    // this.arrayOnSave = [];
     this.juegos = '';
     let Sims4: Juego = {
       titulo: 'Sims 4',
@@ -290,19 +290,9 @@ export class mainComponent {
     this.arrayJuegos.push(OW);
   }
 
-  suma: number;
-  ngOnInit(): void {
-    const localS = localStorage.getItem('juegos');
-    if (localS) {
-      for (const juego of localS) {
-        if (juego) {
-          this.suma++;
-        }
-      }
-    }
+  ngOnInit() {
+    this.arrayOnSave = JSON.parse(localStorage.getItem('juegos') || '[]');
   }
-
-  // this.arrayJuegos.find(PC);Se hará un filter para el checkbox y los juegos
 }
 
 export interface Juego {

@@ -18,8 +18,27 @@ import {
   templateUrl: './fav.component.html',
   styleUrls: ['./fav.component.css'],
   animations: [
-    trigger('enterState', [
-      transition('* => open', [animate('1s', style({ opacity: '*' }))]),
+    trigger('fadeInAnimation', [
+      transition('* => *', [
+        query(
+          ':enter',
+          [
+            style({ opacity: 0, transform: 'translateY(100px)' }),
+            stagger(
+              '50ms',
+              animate(
+                '2000ms ease-out',
+                style({ opacity: 10, transform: 'translateY(0)' })
+              )
+            ),
+          ],
+          { optional: true }
+        ),
+      ]),
+    ]),
+    trigger('boton', [
+      state('in', style({ opacity: 1 })),
+      transition(':enter', [style({ opacity: 0 }), animate(3000)]),
     ]),
   ],
 })
