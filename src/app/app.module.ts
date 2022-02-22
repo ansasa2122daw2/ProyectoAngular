@@ -28,6 +28,39 @@ import { FormsModule } from '@angular/forms';
 //Menu expansion
 import { MatExpansionModule } from '@angular/material/expansion';
 
+//Indexedç//npm install ngx-indexed-db
+import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
+
+const dbConfig: DBConfig = {
+  name: 'Contacto',
+  version: 1,
+  objectStoresMeta: [
+    {
+      store: 'Contacto',
+      storeConfig: { keyPath: 'id', autoIncrement: true },
+      storeSchema: [
+        {
+          name: 'nombre',
+          keypath: 'nombre',
+          options: { unique: false },
+        },
+        { name: 'apellido', keypath: 'apellido', options: { unique: false } },
+        {
+          name: 'telefono',
+          keypath: 'telefono',
+          options: { unique: false },
+        },
+        { name: 'email', keypath: 'email', options: { unique: true } },
+        {
+          name: 'comentario',
+          keypath: 'comentario',
+          options: { unique: true },
+        },
+      ],
+    },
+  ],
+};
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Header/header.component';
 import { mainComponent } from './Main/main.component';
@@ -64,6 +97,7 @@ import { MainRoutingModule } from './main.routing.module';
     MainRoutingModule,
     MatBadgeModule,
     MatExpansionModule,
+    NgxIndexedDBModule.forRoot(dbConfig),
     FormsModule,
   ],
   providers: [],

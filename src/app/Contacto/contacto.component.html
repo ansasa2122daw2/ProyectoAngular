@@ -1,8 +1,16 @@
 <div id="contactoMain">
-  <div id="divContacto">
+  <form
+    id="divContacto"
+    #dataForm="ngForm"
+    (ngSubmit)="submitData(dataForm)"
+    enctype="multipart/form-data"
+    novalidate
+  >
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Nombre</label>
       <input
+        ngModel
+        name="nombre"
         type="text"
         class="form-control"
         id="exampleFormControlInput1"
@@ -12,6 +20,8 @@
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Apellido</label>
       <input
+        ngModel
+        name="apellido"
         type="text"
         class="form-control"
         id="exampleFormControlInput1"
@@ -23,6 +33,8 @@
         >Número de teléfono</label
       >
       <input
+        ngModel
+        name="telefono"
         type="text"
         class="form-control"
         id="exampleFormControlInput1"
@@ -32,6 +44,8 @@
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Email</label>
       <input
+        ngModel
+        name="email"
         type="email"
         class="form-control"
         id="exampleFormControlInput1"
@@ -43,12 +57,14 @@
         >Coméntanos tus dudas :D</label
       >
       <textarea
+        ngModel
+        name="comentario"
         class="form-control"
         id="exampleFormControlTextarea1"
         rows="7"
         resize="none"
       ></textarea>
     </div>
-    <button mat-raised-button>Enviar</button>
-  </div>
+    <button mat-raised-button type="submit">Enviar</button>
+  </form>
 </div>
