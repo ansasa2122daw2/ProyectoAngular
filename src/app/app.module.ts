@@ -68,6 +68,7 @@ import { juegoComponent } from './zJuego/juego.component';
 import { favComponent } from './zzFav/fav.component';
 import { ContactoComponent } from './Contacto/contacto.component';
 
+import { ChekiadoPipe } from './Pipes/chekiado';
 import { BusquedaPipe } from './Pipes/busqueda';
 import { UpperCapitalPipe } from './Pipes/pipe.personalizada';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -83,7 +84,8 @@ import { MainRoutingModule } from './main.routing.module';
     UpperCapitalPipe,
     favComponent,
     BusquedaPipe,
-    ContactoComponent,
+    ContactoComponent, 
+    ChekiadoPipe,
   ],
   imports: [
     BrowserModule,
