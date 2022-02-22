@@ -28,7 +28,7 @@ import { FormsModule } from '@angular/forms';
 //Menu expansion
 import { MatExpansionModule } from '@angular/material/expansion';
 
-//Indexedç//npm install ngx-indexed-db
+//Indexed //npm install ngx-indexed-db
 import { DBConfig, NgxIndexedDBModule } from 'ngx-indexed-db';
 
 const dbConfig: DBConfig = {
@@ -84,7 +84,7 @@ import { MainRoutingModule } from './main.routing.module';
     UpperCapitalPipe,
     favComponent,
     BusquedaPipe,
-    ContactoComponent, 
+    ContactoComponent,
     ChekiadoPipe,
   ],
   imports: [

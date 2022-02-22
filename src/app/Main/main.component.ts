@@ -14,7 +14,6 @@ import {
   animateChild,
   group,
 } from '@angular/animations';
-import { CompilerOptionsValue } from 'typescript';
 
 @Component({
   selector: 'app-sidebar',
@@ -58,6 +57,7 @@ import { CompilerOptionsValue } from 'typescript';
 export class mainComponent {
   @Input() juegos: String;
   busquedaPost = '';
+  checkedPost = false;
 
   arrayJuegos: Juego[] = [];
   arrayTopJuegos: Juego[] = [];
@@ -70,10 +70,10 @@ export class mainComponent {
   }
 
   onSave(juego: Juego) {
-    if(this.arrayOnSave.indexOf(juego) > -1){
+    if (this.arrayOnSave.indexOf(juego) > -1) {
       this.arrayOnSave.splice(this.arrayOnSave.indexOf(juego));
-    }else{
-    this.arrayOnSave.push(juego);
+    } else {
+      this.arrayOnSave.push(juego);
     }
     localStorage.setItem('juegos', JSON.stringify(this.arrayOnSave));
 
@@ -89,7 +89,7 @@ export class mainComponent {
       isTopJuego: false,
       compañia: 'EA',
       plataforma: 'PC',
-      genero: 'Simulacion',
+      genero: 'Simulación',
       imagen: '../../assets/sims.jpg',
       video: '../../assets/sims4.mp4',
       descripcion:
@@ -141,7 +141,7 @@ export class mainComponent {
       isTopJuego: false,
       compañia: 'Nintendo',
       plataforma: 'Nintendo Switch',
-      genero: 'Simulacion',
+      genero: 'Simulación',
       imagen: '../../assets/ACNH.jpg',
       video: '../../assets/acnh.mp4',
       checked: false,
@@ -219,7 +219,7 @@ export class mainComponent {
       isTopJuego: false,
       compañia: 'Microsoft',
       plataforma: 'PC',
-      genero: 'Aventura',
+      genero: 'Simulación',
       imagen: '../../assets/FLIGHTS.jpg',
       video: '../../assets/microsoft_trailer.mp4',
       checked: false,
@@ -283,7 +283,7 @@ export class mainComponent {
       rating: 79,
       isTopJuego: false,
       compañia: 'Microsoft',
-      plataforma: 'Xbox-One',
+      plataforma: 'X-Box One',
       genero: 'Terror',
       imagen: '../../assets/ALIENISOLATION.jpg',
       video: '../../assets/alien.mp4',
@@ -315,8 +315,13 @@ export class mainComponent {
   }
 
   onChecked(selector: string) {
+    if (this.checkedPost) {
+      this.checkedPost = false;
+    } else {
+      this.checkedPost = true;
+    }
     if (this.arrayJuegos) {
-      if (true /*saber si esta checked */ ) {
+      if (this.checkedPost) {
         for (let i = 0; i < this.arrayJuegos.length; i++) {
           if (selector == this.arrayJuegos[i].compañia)
             this.arrayJuegos[i].checked = true;
@@ -326,7 +331,7 @@ export class mainComponent {
             this.arrayJuegos[i].checked = true;
           console.log(this.arrayJuegos[i]);
         }
-      }else{
+      } else {
         for (let i = 0; i < this.arrayJuegos.length; i++) {
           if (selector == this.arrayJuegos[i].compañia)
             this.arrayJuegos[i].checked = false;
@@ -340,8 +345,6 @@ export class mainComponent {
     }
   }
 }
-
-
 
 export interface Juego {
   titulo: string;

@@ -1,50 +1,119 @@
 <mat-drawer-container class="example-container">
-  <mat-drawer class="example-container-lateral" mode="side" opened > 
+  <mat-drawer class="example-container-lateral" mode="side" opened>
     <h6>Plataformas</h6>
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Nintendo Switch')" ng-true-value="selected" ng-false-value="noSelected"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      [(ngModel)]="checkedPost"
+      (click)="onChecked('Nintendo Switch')"
+      style="display: none"
       >Nintendo Switch</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('PC')">PC</mat-checkbox
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Nintendo Switch')"
+      >Nintendo Switch</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('PS5')">PS5</mat-checkbox
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('PC')"
+      >PC</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('X-Box One')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('PS5')"
+      >PS5</mat-checkbox
+    ><br />
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('X-Box One')"
       >X-Box One</mat-checkbox
     >
 
     <h6>Género</h6>
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Aventura')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Aventura')"
+      style="margin-top: 8%"
       >Aventura</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Estrategia')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Estrategia')"
       >Estrategia</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Simulación')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Simulación')"
       >Simulación</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Terror')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Terror')"
       >Terror</mat-checkbox
     ><br />
 
     <h6>Compañia</h6>
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Blizzard')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Blizzard')"
+      style="margin-top: 8%"
       >Blizzard</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('EA')" >EA</mat-checkbox
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('EA')"
+      >EA</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Microsoft')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Microsoft')"
       >Microsoft</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Nintendo')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Nintendo')"
       >Nintendo</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Rockstar Games')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Rockstar Games')"
       >Rockstar Games</mat-checkbox
     ><br />
-    <mat-checkbox color="primary" id="" class="example-margin" (click)="onChecked('Sony')"
+    <mat-checkbox
+      color="primary"
+      id=""
+      class="example-margin"
+      (click)="onChecked('Sony')"
       >Sony</mat-checkbox
     ><br />
-    
   </mat-drawer>
 
   <div id="contenedorFav"></div>
@@ -78,7 +147,7 @@
       </div>
 
       <div id="juegosTop" [@images]="juegos.length">
-        <div *ngFor="let juegos of arrayTopJuegos" >
+        <div *ngFor="let juegos of arrayTopJuegos">
           <img
             (click)="irJuego(juegos)"
             routerLink="/juego"
@@ -107,7 +176,9 @@
         <h2>MÁS JUEGOS</h2>
       </div>
       <div id="juegosMAS" [@images]="juegos.length">
-        <div *ngFor="let juegos of arrayJuegos | busqueda: busquedaPost | chekiado">
+        <div
+          *ngFor="let juegos of arrayJuegos | busqueda: busquedaPost | chekiado"
+        >
           <img
             (click)="irJuego(juegos)"
             routerLink="/juego"
